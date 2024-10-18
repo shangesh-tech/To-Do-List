@@ -21,9 +21,12 @@ jobs:
         with:
           node-version: '20'
 
+      # Add working directory
       - name: Install dependencies
+        working-directory: ./frontend  # Change to the frontend directory
         run: npm install
 
       - name: Run Prettier to check formatting
+        working-directory: ./frontend  # Change to the frontend directory
         run: npm run prettier -- --check
         continue-on-error: false
